@@ -1,7 +1,10 @@
 const myLibrary = [];
 
-function Book() {
-  // the constructor...
+function Book(title, author, pages, read) {
+  this.title = title;
+  this.author = author;
+  this.pages = pages;
+  this.read = read;
 }
 
 document
@@ -12,18 +15,22 @@ document
   });
 
 function addBookToLibrary() {
-  const title = document.getElementById("title").value;
-  const author = document.getElementById("author").value;
-  const pages = document.getElementById("page").value;
-  const read = document.getElementById("read").checked;
+  let book = new Book(
+    document.getElementById("title").value,
+    document.getElementById("author").value,
+    document.getElementById("page").value,
+    document.getElementById("read").checked
+  );
+  myLibrary.push(book);
 
   const booklist = document.getElementById("bookList");
 
   var card = document.createElement("div");
   card.className = "card";
-  card.innerHTML = `<div>Title: ${title}</div><div>Author: ${author}</div><div>Pages: ${pages}</div><div>Read: ${read}</div>`;
+  card.innerHTML = `<div>Title: ${book.title}</div><div>Author: ${book.author}</div><div>Pages: ${book.pages}</div><div>Read: ${book.read}</div>`;
   booklist.appendChild(card);
   document.getElementById("addBookForm").reset();
+  console.log(myLibrary);
   togglePopup(); // Close popup after adding the book
 }
 
