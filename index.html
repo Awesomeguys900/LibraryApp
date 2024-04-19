@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Library Loaning Book App</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="books">
+      <h1>My Library</h1>
+      <div id="bookList" class="bookList"></div>
+    </div>
+    <button onClick="togglePopup()">Add a book</button>
+    <!-- Popup overlay -->
+    <div id="popupOverlay" class="overlay">
+      <div id="popup" class="popup">
+        <h2>Add Book</h2>
+        <form id="addBookForm">
+          <div class="container">
+            <input type="text" id="title" placeholder="Title" required />
+            <input type="text" id="author" placeholder="Author" required />
+            <input type="number" id="page" placeholder="Page" required />
+
+            <label style="text-align: center;" for="read">read?</label>
+            <input type="checkbox" id="read" name="read" />
+          </div>
+          <div class ="buttonsSubmitClose"> 
+          <input type="submit" value="Submit"/>
+        </form>
+
+        <button onclick="togglePopup()">Close</button>
+      </div>
+      </div>
+      </div>
+
+      <script src="script.js"></script>
+    </div>
+  </body>
+</html>
