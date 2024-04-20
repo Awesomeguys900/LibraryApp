@@ -10,11 +10,18 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="books">
+
+    <div class="navBar">
       <h1>My Library</h1>
-      <div id="bookList" class="bookList"></div>
+      <button onClick="togglePopup()">Add a book</button>
     </div>
-    <button onClick="togglePopup()">Add a book</button>
+
+    <div id="bookList" class="bookList">
+
+    </div>
+    
+
+  
     <!-- Popup overlay -->
     <div id="popupOverlay" class="overlay">
       <div id="popup" class="popup">
@@ -29,11 +36,10 @@
             <input type="checkbox" id="read" name="read" />
           </div>
           <div class ="buttonsSubmitClose"> 
-          <input type="submit" value="Submit"/>
+          <input class ="formButton "type="submit" value="Submit"/>
         </form>
 
-        <button onclick="togglePopup()">Close</button>
-      </div>
+        <button class="formButton" type="button" onclick="togglePopup()">Close</button>
       </div>
       </div>
 
